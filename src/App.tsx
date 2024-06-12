@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 function App() {
   const [amount, setAmount] = useState<number>(0);
   useEffect(() => {
+    console.log(amount);
     if (amount > 0) WebApp.MainButton.show();
     else WebApp.MainButton.hide();
   }, [amount]);
@@ -14,7 +15,9 @@ function App() {
     WebApp.MainButton.setText("Convert");
   }, []);
   return (
-    <div className="flex flex-col h-screen w-screen p-4 items-center bg-[#212121]">
+    <div
+      className={`flex flex-col h-screen w-screen p-4 items-center bg-[${WebApp.themeParams.bg_color}]`}
+    >
       <div className="w-full flex items-center justify-between p-4">
         <Title weight="1">MazdaxBot</Title>
         <TonConnectButton />
