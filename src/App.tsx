@@ -1,11 +1,5 @@
 import "@telegram-apps/telegram-ui/dist/styles.css";
-import {
-  Button,
-  Headline,
-  Image,
-  Input,
-  Title,
-} from "@telegram-apps/telegram-ui";
+import { Headline, Image, Input, Title } from "@telegram-apps/telegram-ui";
 import { TonConnectButton } from "@tonconnect/ui-react";
 import WebApp from "@twa-dev/sdk";
 import { useEffect, useState } from "react";
