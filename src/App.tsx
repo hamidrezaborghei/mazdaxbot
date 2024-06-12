@@ -19,7 +19,9 @@ function App() {
       className={`flex flex-col h-screen w-screen p-4 items-center bg-[${WebApp.themeParams.bg_color}]`}
     >
       <div className="w-full flex items-center justify-between p-4">
-        <Title weight="1">MazdaxBot</Title>
+        <Title color={`${WebApp.themeParams.text_color}`} weight="1">
+          MazdaxBot
+        </Title>
         <TonConnectButton />
       </div>
       <div className="flex flex-1 flex-col w-full gap-4">
@@ -36,10 +38,18 @@ function App() {
           }
         />
         <div className="p-[0px_22px_16px] flex flex-col gap-2">
-          <Headline className="text-center" weight="2">
+          <Headline
+            color={`${WebApp.themeParams.text_color}`}
+            className="text-center"
+            weight="2"
+          >
             It will cost
           </Headline>
-          <Title weight="1" className="text-center">
+          <Title
+            color={`${WebApp.themeParams.text_color}`}
+            weight="1"
+            className="text-center"
+          >
             125,000 IRR
           </Title>
         </div>
