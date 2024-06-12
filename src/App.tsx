@@ -7,17 +7,19 @@ import {
   Title,
 } from "@telegram-apps/telegram-ui";
 import { TonConnectButton } from "@tonconnect/ui-react";
+import WebApp from "@twa-dev/sdk";
 
 function App() {
   return (
     <div className="flex flex-col h-screen w-screen p-4 items-center">
       <div className="w-full flex items-center justify-between p-4">
-        <Title weight="1">MazBot</Title>
+        <Title weight="1">MazdaxBot</Title>
         <TonConnectButton />
       </div>
       <div className="flex flex-1 flex-col w-full gap-4">
         <Input
           header="Ton Amount"
+          style={{ backgroundColor: WebApp.themeParams.bg_color }}
           before={
             <Image
               src="/ton_symbol.png"
