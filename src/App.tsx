@@ -8,21 +8,34 @@ import {
 } from "@telegram-apps/telegram-ui";
 import { TonConnectButton } from "@tonconnect/ui-react";
 import WebApp from "@twa-dev/sdk";
+import { useEffect, useState } from "react";
 
 function App() {
+  const [amount, setAmount] = useState<number>(0);
+  useEffect(() => {
+    if (amount > 0) WebApp.MainButton.enable();
+    else WebApp.MainButton.disable();
+  }, [amount]);
+  useEffect(() => {
+    WebApp.MainButton.setText("Convert");
+    WebApp.MainButton.show();
+    WebApp.MainButton.disable();
+  }, []);
   return (
-    <div className="flex flex-col h-screen w-screen p-4 items-center">
+    <div className="flex flex-col h-screen w-screen p-4 items-center bg-[#212121]">
       <div className="w-full flex items-center justify-between p-4">
         <Title weight="1">MazdaxBot</Title>
         <TonConnectButton />
       </div>
       <div className="flex flex-1 flex-col w-full gap-4">
         <Input
+          type="number"
+          onChange={(e) => setAmount(+e.target.value)}
+          value={amount}
           header="Ton Amount"
-          style={{ backgroundColor: WebApp.themeParams.bg_color }}
           before={
             <Image
-              src="/ton_symbol.png"
+              src="./ton_symbol.png"
               className="bg-transparent border-white shadow-none"
             />
           }
@@ -36,9 +49,6 @@ function App() {
           </Title>
         </div>
       </div>
-      <Button disabled className="w-full">
-        Convert
-      </Button>
     </div>
   );
 }

@@ -12,7 +12,7 @@ WebApp.ready();
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <TonConnectUIProvider manifestUrl="https://hamidrezaborghei.github.io/mazdaxbot/tonconnect-manifest.json">
-      <AppRoot appearance="light">
+      <AppRoot>
         <App />
       </AppRoot>
     </TonConnectUIProvider>
